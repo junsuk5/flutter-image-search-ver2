@@ -1,6 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:image_search_app_ver2/data/data_source/remote/photo_data_source.dart';
-import 'package:injectable/injectable.dart';
 import 'package:retrofit/retrofit.dart';
 
 import 'dto/photo_result_dto.dart';

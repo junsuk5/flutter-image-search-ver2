@@ -14,8 +14,8 @@ class ImageCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(20),
-      child: Image.network(
-        photo.url,
+      child: Image.memory(
+        photo.imageData,
         fit: BoxFit.cover,
       ),
     );

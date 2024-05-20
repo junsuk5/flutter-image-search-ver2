@@ -6,12 +6,15 @@ import '../../core/result.dart';
 import '../model/photo.dart';
 
 @lazySingleton
-class GetPhotosUseCases {
+class GetOfflineFirstPhotosUseCases {
   final PhotoRepository _photoRepository;
 
-  GetPhotosUseCases(this._photoRepository);
+  GetOfflineFirstPhotosUseCases(this._photoRepository);
 
   Future<Result<List<Photo>, NetworkError>> execute(String query) async {
-    return await _photoRepository.getPhotos(query);
+    return await _photoRepository.getPhotos(
+      fetchFromRemote: false,
+      query: query,
+    );
   }
 }

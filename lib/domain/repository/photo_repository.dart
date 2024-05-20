@@ -4,5 +4,8 @@ import '../../core/result.dart';
 import '../model/photo.dart';
 
 abstract interface class PhotoRepository {
-  Future<Result<List<Photo>, NetworkError>> getPhotos(String query);
+  Future<Result<List<Photo>, NetworkError>> getPhotos({
+    required bool fetchFromRemote,
+    required String query,
+  });
 }

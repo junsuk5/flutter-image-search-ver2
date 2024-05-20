@@ -13,7 +13,7 @@ class SearchListViewModel extends Notifier<SearchListState> {
   void onSearch(String query) async {
     state = state.copyWith(isLoading: true);
 
-    final useCase = getIt<GetPhotosUseCases>();
+    final useCase = getIt<GetOfflineFirstPhotosUseCases>();
     final result = await useCase.execute(query);
 
     switch (result) {

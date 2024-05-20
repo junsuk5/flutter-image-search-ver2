@@ -5,6 +5,8 @@ import 'package:image_search_app_ver2/presentation/search_list_screen.dart';
 import 'di/di_setup.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
   configureDependencies();
   runApp(
     const ProviderScope(child: MyApp()),
