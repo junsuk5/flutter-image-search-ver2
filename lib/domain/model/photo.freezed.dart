@@ -17,10 +17,10 @@ final _privateConstructorUsedError = UnsupportedError('It seems like you constru
 /// @nodoc
 mixin _$Photo {
 
- int get id => throw _privateConstructorUsedError; String get url => throw _privateConstructorUsedError; String get tags => throw _privateConstructorUsedError;
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int id,  String url,  String tags)  $default,) => throw _privateConstructorUsedError;
+ int get id => throw _privateConstructorUsedError; Uint8List get imageData => throw _privateConstructorUsedError; String get tags => throw _privateConstructorUsedError;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int id,  Uint8List imageData,  String tags)  $default,) => throw _privateConstructorUsedError;
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int id,  String url,  String tags)?  $default,{required TResult orElse(),}) => throw _privateConstructorUsedError;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int id,  Uint8List imageData,  String tags)?  $default,{required TResult orElse(),}) => throw _privateConstructorUsedError;
 
 
 
@@ -35,7 +35,7 @@ abstract class $PhotoCopyWith<$Res>  {
   factory $PhotoCopyWith(Photo value, $Res Function(Photo) then) = _$PhotoCopyWithImpl<$Res, Photo>;
 @useResult
 $Res call({
- int id, String url, String tags
+ int id, Uint8List imageData, String tags
 });
 
 
@@ -51,11 +51,11 @@ class _$PhotoCopyWithImpl<$Res,$Val extends Photo> implements $PhotoCopyWith<$Re
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? url = null,Object? tags = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? imageData = null,Object? tags = null,}) {
   return _then(_value.copyWith(
 id: null == id ? _value.id : id // ignore: cast_nullable_to_non_nullable
-as int,url: null == url ? _value.url : url // ignore: cast_nullable_to_non_nullable
-as String,tags: null == tags ? _value.tags : tags // ignore: cast_nullable_to_non_nullable
+as int,imageData: null == imageData ? _value.imageData : imageData // ignore: cast_nullable_to_non_nullable
+as Uint8List,tags: null == tags ? _value.tags : tags // ignore: cast_nullable_to_non_nullable
 as String,
   )as $Val);
 }
@@ -68,7 +68,7 @@ abstract class _$$PhotoImplCopyWith<$Res> implements $PhotoCopyWith<$Res> {
   factory _$$PhotoImplCopyWith(_$PhotoImpl value, $Res Function(_$PhotoImpl) then) = __$$PhotoImplCopyWithImpl<$Res>;
 @override @useResult
 $Res call({
- int id, String url, String tags
+ int id, Uint8List imageData, String tags
 });
 
 
@@ -81,11 +81,11 @@ class __$$PhotoImplCopyWithImpl<$Res> extends _$PhotoCopyWithImpl<$Res, _$PhotoI
       : super(_value, _then);
 
 
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? url = null,Object? tags = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? imageData = null,Object? tags = null,}) {
   return _then(_$PhotoImpl(
 id: null == id ? _value.id : id // ignore: cast_nullable_to_non_nullable
-as int,url: null == url ? _value.url : url // ignore: cast_nullable_to_non_nullable
-as String,tags: null == tags ? _value.tags : tags // ignore: cast_nullable_to_non_nullable
+as int,imageData: null == imageData ? _value.imageData : imageData // ignore: cast_nullable_to_non_nullable
+as Uint8List,tags: null == tags ? _value.tags : tags // ignore: cast_nullable_to_non_nullable
 as String,
   ));
 }
@@ -97,28 +97,28 @@ as String,
 
 
 class _$PhotoImpl  implements _Photo {
-  const _$PhotoImpl({required this.id, required this.url, required this.tags});
+  const _$PhotoImpl({required this.id, required this.imageData, required this.tags});
 
   
 
 @override final  int id;
-@override final  String url;
+@override final  Uint8List imageData;
 @override final  String tags;
 
 @override
 String toString() {
-  return 'Photo(id: $id, url: $url, tags: $tags)';
+  return 'Photo(id: $id, imageData: $imageData, tags: $tags)';
 }
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _$PhotoImpl&&(identical(other.id, id) || other.id == id)&&(identical(other.url, url) || other.url == url)&&(identical(other.tags, tags) || other.tags == tags));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _$PhotoImpl&&(identical(other.id, id) || other.id == id)&&const DeepCollectionEquality().equals(other.imageData, imageData)&&(identical(other.tags, tags) || other.tags == tags));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,id,url,tags);
+int get hashCode => Object.hash(runtimeType,id,const DeepCollectionEquality().hash(imageData),tags);
 
 @JsonKey(ignore: true)
 @override
@@ -126,14 +126,14 @@ int get hashCode => Object.hash(runtimeType,id,url,tags);
 _$$PhotoImplCopyWith<_$PhotoImpl> get copyWith => __$$PhotoImplCopyWithImpl<_$PhotoImpl>(this, _$identity);
 
 @override
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int id,  String url,  String tags)  $default,) {
-  return $default(id,url,tags);
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int id,  Uint8List imageData,  String tags)  $default,) {
+  return $default(id,imageData,tags);
 }
 
 @override
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int id,  String url,  String tags)?  $default,{required TResult orElse(),}) {
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int id,  Uint8List imageData,  String tags)?  $default,{required TResult orElse(),}) {
   if ($default != null) {
-    return $default(id,url,tags);
+    return $default(id,imageData,tags);
   }
   return orElse();
 }
@@ -145,12 +145,12 @@ _$$PhotoImplCopyWith<_$PhotoImpl> get copyWith => __$$PhotoImplCopyWithImpl<_$Ph
 
 
 abstract class _Photo implements Photo {
-  const factory _Photo({required final  int id, required final  String url, required final  String tags}) = _$PhotoImpl;
+  const factory _Photo({required final  int id, required final  Uint8List imageData, required final  String tags}) = _$PhotoImpl;
   
 
   
 
-@override  int get id;@override  String get url;@override  String get tags;
+@override  int get id;@override  Uint8List get imageData;@override  String get tags;
 @override @JsonKey(ignore: true)
 _$$PhotoImplCopyWith<_$PhotoImpl> get copyWith => throw _privateConstructorUsedError;
 
