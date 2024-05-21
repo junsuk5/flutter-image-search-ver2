@@ -1,3 +1,5 @@
+import 'dart:isolate';
+
 import 'package:dio/dio.dart';
 import 'package:http/http.dart' as http;
 import 'package:image_search_app_ver2/core/error/network_error.dart';
@@ -41,17 +43,18 @@ class PhotoRepositoryImpl implements PhotoRepository {
       // await _photoDao.clearPhotos();
 
       // 캐시 추가
-      final photoEntities =
-          await Future.wait(remoteResultDto.hits!.map((photoDto) async {
-        final response = await http.get(Uri.parse(photoDto.previewURL!));
+      final photoEntities = await Isolate.run(
+          () => Future.wait(remoteResultDto.hits!.map((photoDto) async {
+                final response =
+                    await http.get(Uri.parse(photoDto.previewURL!));
 
-        return PhotoEntity(
-          id: photoDto.id!.toInt(),
-          imageData: response.bodyBytes,
-          tags: photoDto.tags!,
-          query: query,
-        );
-      }));
+                return PhotoEntity(
+                  id: photoDto.id!.toInt(),
+                  imageData: response.bodyBytes,
+                  tags: photoDto.tags!,
+                  query: query,
+                );
+              })));
       await _photoDao.insertPhotos(photoEntities);
 
       return Result.success(photoEntities.map((e) => e.toPhoto()).toList());
