@@ -70,6 +70,7 @@ class _SearchListRootState extends State<SearchListRoot> {
   @override
   void dispose() {
     eventSubscription?.cancel();
+    networkConnectivitySubscription?.cancel();
     super.dispose();
   }
 }
