@@ -124,21 +124,24 @@ class _SearchListScreenState extends State<SearchListScreen> {
               padding: const EdgeInsets.all(10.0),
               child: widget.state.isLoading
                   ? const Center(child: CircularProgressIndicator())
-                  : GridView.count(
-                      crossAxisSpacing: 10,
-                      mainAxisSpacing: 10,
-                      crossAxisCount: 2,
-                      children: widget.state.photos
-                          .map(
-                            (photo) => GestureDetector(
-                              onTap: () {},
-                              child: Hero(
-                                tag: photo.id,
-                                child: ImageCardWidget(photo: photo),
-                              ),
-                            ),
-                          )
-                          .toList(),
+                  : GridView.builder(
+                      itemCount: widget.state.photos.length,
+                      gridDelegate:
+                          const SliverGridDelegateWithMaxCrossAxisExtent(
+                        crossAxisSpacing: 10,
+                        mainAxisSpacing: 10,
+                        maxCrossAxisExtent: 200,
+                      ),
+                      itemBuilder: (BuildContext context, int index) {
+                        final photo = widget.state.photos[index];
+                        return GestureDetector(
+                          onTap: () {},
+                          child: Hero(
+                            tag: photo.id,
+                            child: ImageCardWidget(photo: photo),
+                          ),
+                        );
+                      },
                     ),
             ),
           ),

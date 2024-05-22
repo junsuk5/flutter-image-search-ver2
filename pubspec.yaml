@@ -41,10 +41,8 @@ dependencies:
   get_it: ^7.7.0
   http: ^1.2.1
   injectable: ^2.4.2
-  flutter_riverpod: ^2.5.1
   retrofit: ^4.1.0
   dio: ^5.4.3+1
-  riverpod_annotation: ^2.3.5
   sqflite: ^2.3.3+1
   connectivity_plus: ^6.0.3
 
@@ -58,12 +56,11 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^4.0.0
-  freezed: ^2.5.3
+  freezed: ^2.5.2
   json_serializable: ^6.8.0
   build_runner: ^2.4.10
   injectable_generator: ^2.6.1
   custom_lint: ^0.6.4
-  riverpod_lint: ^2.3.12
   retrofit_generator: ^8.1.0
 
 # For information on the generic Dart part of this file, see the
